@@ -1,0 +1,98 @@
+/* Default: black + green (dark) */
+html {
+  color-scheme: dark;
+  --bg: #050807;
+  --bg-accent: #0a1620;
+  --surface: #0e1411;
+  --surface-elevated: #121a16;
+  --text: #e8f5e9;
+  --text-muted: #7cb89a;
+  --border: #1e2d26;
+  --border-strong: #2a3d32;
+  --primary: #22c55e;
+  --primary-hover: #4ade80;
+  --primary-foreground: #052e16;
+  --focus-ring: rgba(34, 197, 94, 0.45);
+  --input-bg: #080d0a;
+  --input-placeholder: #5c7a6c;
+  --signout-bg: #0f1813;
+  --signout-hover: #16231c;
+  --danger: #f87171;
+  --danger-hover: #fca5a5;
+  --error-bg: rgba(127, 29, 29, 0.35);
+  --error-border: rgba(248, 113, 113, 0.45);
+  --todo-row-bg: #0a1010;
+  --todo-row-border: #1e2d26;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --glow-a: rgba(34, 197, 94, 0.18);
+  --glow-b: rgba(16, 185, 129, 0.12);
+  --radius: 12px;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f0fdf4;
+  --bg-accent: #ecfdf5;
+  --surface: #ffffff;
+  --surface-elevated: #f8fafc;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --border: #bbf7d0;
+  --border-strong: #86efac;
+  --primary: #15803d;
+  --primary-hover: #166534;
+  --primary-foreground: #f0fdf4;
+  --focus-ring: rgba(21, 128, 61, 0.35);
+  --input-bg: #f8fafc;
+  --input-placeholder: #94a3b8;
+  --signout-bg: #f1f5f9;
+  --signout-hover: #e2e8f0;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --error-bg: #fef2f2;
+  --error-border: #fecaca;
+  --todo-row-bg: #f8fafc;
+  --todo-row-border: #e2e8f0;
+  --shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+  --glow-a: rgba(34, 197, 94, 0.15);
+  --glow-b: rgba(16, 185, 129, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  background-image: radial-gradient(
+      ellipse 120% 80% at 100% 0%,
+      var(--glow-a),
+      transparent 50%
+    ),
+    radial-gradient(ellipse 100% 60% at 0% 100%, var(--glow-b), transparent 45%);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  position: relative;
+}

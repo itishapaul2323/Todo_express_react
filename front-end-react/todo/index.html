@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050807" />
+    <script>
+      (function () {
+        try {
+          var k = "todo-theme";
+          var stored = localStorage.getItem(k);
+          var theme =
+            stored === "light" || stored === "dark" ? stored : "dark";
+          if (theme === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          } else {
+            document.documentElement.removeAttribute("data-theme");
+          }
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta)
+            meta.setAttribute(
+              "content",
+              theme === "light" ? "#f0fdf4" : "#050807"
+            );
+        } catch (e) {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      })();
+    </script>
+    <title>todo</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
